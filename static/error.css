@@ -1,0 +1,19 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #fff3e0;
+    font-family: "Marck Script", serif;
+}
+
+h1 {
+    color: #ff6f20;
+    font-size: 2.5em;
+    text-align: center;
+    padding: 20px;
+    border: 2px solid #ffcc80;
+    border-radius: 10px;
+    background-color: #ffe0b2;
+}

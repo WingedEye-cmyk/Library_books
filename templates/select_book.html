@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Marck+Script&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', path='select_book.css') }}">
+    <title>Управление вашими книгами</title>
+    <script>
+        async function deleteBook(bookId) {
+            if (confirm("Вы желаете удалить книгу?")) {
+                const response = await fetch(`/delete_a_book/${bookId}`, {
+                    method: 'DELETE'
+                });
+                const message = await response.text();
+                document.getElementById('result').innerHTML = message;
+                if (response.ok) {
+                    setTimeout(() => location.reload());
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+    <h1>Управление вашими книгами</h1>
+    {% if not books %}
+        <h2>Книг пока нет</h2>
+    {% else %}
+        <ul>
+            {% for book_id, book in books.items() %}
+                <li>
+                    <strong>{{ book.title }}</strong> by {{ book.author }} ({{ book.year }}, {{ book.genre }})
+                    <a href="/edit_a_book/{{ book_id }}">Редактировать</a>
+                    <a href="#" onclick="deleteBook({{ book_id }}); return false;">Удалить</a>
+                </li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+    <div id="result"></div>
+    <a href="/">Вернуться в главное меню</a>
+</body>
+</html>

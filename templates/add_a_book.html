@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Добавить книгу</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', path='add_a_book.css') }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Marck+Script&display=swap" rel="stylesheet">
+</head>
+<body>
+    <h1>Добавить книгу</h1>
+    <form action="/add_a_book/" method="post">
+        <label for="title">Заголовок:</label>
+        <input type="text" id="title" name="title" required><br>
+        <label for="author">Автор:</label>
+        <input type="text" id="author" name="author" required><br>
+        <label for="year">Год:</label>
+        <input type="text" id="year" name="year" required><br>
+        <label for="genre">Жанр:</label>
+        <input type="text" id="genre" name="genre" required><br>
+        <input type="submit" value="Добавить книгу">
+    </form>
+    
+    <h2>Книги:</h2>
+    <ul>
+        {% for book_id, book in books.items() %}
+            <li>{{ book.title }} от {{ book.author }} ({{ book.year }}, {{ book.genre }})</li>
+        {% endfor %}
+    </ul>
+    <a href="/">Вернуться в главное меню</a>
+</body>
+</html>

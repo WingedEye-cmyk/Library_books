@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', path='edit_a_book.css') }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Marck+Script&display=swap" rel="stylesheet">
+    <title>Редактирование книги</title>
+</head>
+<body>
+    <h1>Редактирование книги</h1>
+    <form id="editBookForm" action="/edit_a_book/{{ book_id }}" method="POST">
+        <input type="hidden" name="_method" value="PUT">
+        <label for="title">Название:</label>
+        <input type="text" id="title" name="title" value="{{ book.title }}" required><br>
+        <label for="author">Автор:</label>
+        <input type="text" id="author" name="author" value="{{ book.author }}" required><br>
+        <label for="year">Год:</label>
+        <input type="number" id="year" name="year" value="{{ book.year }}" required><br>
+        <label for="genre">Жанр:</label>
+        <input type="text" id="genre" name="genre" value="{{ book.genre }}" required><br>
+        <button type="submit">Сохранить изменения</button>
+    </form>
+    <a href="/">Вернуться на главную страницу</a>
+
+</body>
+</html>

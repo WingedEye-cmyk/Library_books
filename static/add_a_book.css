@@ -1,0 +1,90 @@
+body {
+    font-family: "Marck Script", serif;
+    background-color: #fff8e1;
+    color: #5e0000;
+    margin: 0;
+    padding: 20px;
+    text-align: center;
+}
+
+h1 {
+    color: #ff8f00;
+    text-align: center;
+}
+
+form {
+    background-color: #ffe0b2;
+    padding: 20px;
+    border-radius: 8px;
+    max-width: 400px;
+    margin: 0 auto;
+    font-size: 1.2em;
+    text-align: center;
+}
+
+label {
+    display: block;
+    margin: 10px 0 5px;
+    color: #ff6f00;
+    font-size: 1.2em;
+}
+
+input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ffcc80;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+input[type="submit"] {
+    background-color: #ffb74d;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s;
+    margin-top: 10px;
+    display: inline-block;
+    text-align: center;
+}
+
+input[type="submit"]:hover {
+    background-color: #ffa726;
+}
+
+h2 {
+    color: #ff6f00;
+    margin-top: 30px;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    background-color: #ffe0b2;
+    margin: 10px 0;
+    padding: 10px;
+    border-radius: 4px;
+}
+
+input[type="text"], input[type="submit"] {
+    font-size: 1em;
+}
+
+
+a {
+    text-decoration: none;
+    color:  #ff8c00;
+    margin-left: 10px;
+}
+
+
+a:hover {
+    text-decoration: underline;
+    color: #ff8c00;
+}

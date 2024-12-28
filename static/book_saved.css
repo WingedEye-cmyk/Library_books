@@ -1,0 +1,30 @@
+body {
+    font-family: "Marck Script", serif;
+    background-color: #fff3e0;
+    color: #ff6f20;
+    text-align: center;
+    margin: 0;
+    padding: 50px;
+    font-size: 1.2em;
+}
+
+h1 {
+    font-size: 3em;
+    margin-bottom: 20px;
+}
+
+a {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #ffab40;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 1.2em;
+    transition: background-color 0.3s;
+}
+
+a:hover {
+    background-color: #ff8c00;
+}
